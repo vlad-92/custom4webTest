@@ -1,24 +1,52 @@
-        * {
+        *, *:before, *:after {
             text-align:center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
 
+        input{
+            width: 25%;
+            margin-left:130px;
+            margin-bottom: 5px;
+            height: 35px;
+            float: left;
+            border: 1px solid  #fa6666;
+            border-radius: 3px;
+            background-color: #fafafa;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,.16);
+            font-size: .9em;
+        }
+
+        html {
+            font-size: 1.125em; /*18px*/
+            width: 100%;
+            height: 100%;
+        }
         body {
             background-color: #fafafa;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.42857143;
+            padding:1em;
         }
 
         table {
             color: #333;
             font-size: .9em;
             font-weight: 300;
-            line-height: 40px;
-            border-collapse: separate;
-            border-spacing: 0;
+            line-height: 30px;
             border: 2px solid #fafafa;
-            width: 50%;
-            margin: 50px auto;
+            width: 80%;
+            margin: 0px 130px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,.16);
             border-radius: 2px;
+            border-collapse:collapse;
+            border-spacing:0;
+            max-width:100%;
         }
+
 
         th {
             cursor: pointer;
@@ -26,21 +54,17 @@
             color: #fff;
             border: none;
         }
-        
-        td{
-            border: 1px solid #fa6666;
-        }
 
-        .active {
-            background-color: #ff4d4d;
-            color :#fff;
+        table tbody tr {background-color:#fff;}
+        table tbody tr:hover {background-color:#eee; color:#000;}
+        table th, table td {
+            border:1px solid #bfbfbf;
+            padding:10px 14px;
+            position:relative;
+            vertical-align:middle;
         }
+        caption {font-size:1.111em; font-weight:300; padding:10px 0;}
 
-        input[type=text] {
-            width: 25%;
-            height: 35px;
-            margin-top: 10px;
-            padding: 1px; 
-            border: 2px solid  #fa6666;
-            border-radius: 4px;
-        }
+
+
+

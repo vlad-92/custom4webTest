@@ -9,7 +9,7 @@
       }else {
             parser = JSON.parse(xhr.responseText);
 /* show table */
-            for(var i = 0; i < 200; i++){
+            for(var i = 0; i < parser.length; i++){
                 addRow(parser[i]);
               }
       } 
@@ -89,26 +89,54 @@
 
 
 
+
+
+    // function sort(ascending, columnClassName, tableId) {
+    //     var tbody = document.getElementById(tableId).getElementsByTagName(
+    //         "tbody")[0];
+    //     var rows = tbody.getElementsByTagName("tr");
+    //     var unsorted = true;
+    //     while (unsorted) {
+    //         unsorted = false
+    //         for (var r = 0; r < rows.length - 1; r++) {
+    //             var row = rows[r];
+    //             var nextRow = rows[r + 1];
+    //             var value = row.getElementsByClassName(columnClassName)[0].innerHTML;
+    //             var nextValue = nextRow.getElementsByClassName(columnClassName)[0].innerHTML;
+    //             value = value.replace(',', ''); // in case a comma is used in float number
+    //             nextValue = nextValue.replace(',', '');
+    //             if (!isNaN(value)) {
+    //                 value = parseFloat(value);
+    //                 nextValue = parseFloat(nextValue);
+    //             }
+    //             if (ascending ? value > nextValue : value < nextValue) {
+    //                 tbody.insertBefore(nextRow, row);
+    //                 unsorted = true;
+    //             }
+    //         }
+    //     }
+    // };
+
+
+
 /* search table */
       function searchTable(){
-        var input, filter, tr, td, i;
+        var input, filter, tr, td, i, j;
         input = document.getElementById("search");
         filter = input.value.toUpperCase();
         tr = document.getElementsByTagName("tr");
 
         for (i = 0; i < tr.length; i++) {
           td = tr[i].getElementsByTagName("td") ; 
-          for(j=0 ; j<td.length ; j++)
+          for(j = 0 ; j < td.length ; j++)
           {
             let tdata = td[j] ;
             if (tdata) {
               if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
-                break ; 
-              } else {
-                tr[i].style.display = "none";
-              }
-            } 
+                break ;
+              } tr[i].style.display = "none";
+            }
           }
         }
       }
